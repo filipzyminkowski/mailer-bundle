@@ -1,0 +1,22 @@
+{
+  "name": "globegroup/mailer-bundle",
+  "description": "",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mateusz Kaczmarek",
+      "email": "mateusz.kaczmarek@globegroup.pl"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "GlobeGroup\\MailerBundle\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^7.3",
+    "symfony/mailer": "^4.4|^5.0",
+    "symfony/translation": "^4.4|^5.0"
+  }
+}

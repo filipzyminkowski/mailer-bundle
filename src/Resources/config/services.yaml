@@ -1,0 +1,22 @@
+parameters:
+    apiHostWithScheme: '%env(API_SCHEME)%://%env(API_HOST)%'
+    ngHostWithScheme: '%env(NG_SCHEME)%://%env(NG_HOST)%'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    GlobeGroup\MailerBundle\Mailer\Mailer:
+        abstract:  true
+        arguments:
+            - '@mailer.mailer'
+            - 'GlobeGroup\Mailer\MailerParameters'
+            - '@translator'
+
+    GlobeGroup\MailerBundle\Mailer\MailerParameters:
+        $parameters:
+            fromEmail: '%env(string:FROM_EMAIL)%'
+            noReplyEmail: '%env(string:NO_REPLY_EMAIL)%'
+            apiHostWithScheme: '%apiHostWithScheme%'
+            ngHostWithScheme: '%ngHostWithScheme%'
